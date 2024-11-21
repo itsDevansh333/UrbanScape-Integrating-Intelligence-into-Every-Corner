@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <title>Carousel with Blurred Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+    
+        .background-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('plant watering_Edited.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.8;
+        }
+    
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+    
+        /* Updated carousel container styling */
+        .carousel-container {
+            padding-top: 80px;
+            width: 100%;
+            max-width: 1400px; /* Increased max-width */
+            margin: 0 auto;
+        }
+    
+        /* Updated carousel styling */
+        .carousel {
+            width: 100%;
+            height: calc(100vh - 120px); /* Subtract navbar height and padding */
+            max-height: 800px; /* Maximum height */
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+        }
+    
+        /* Updated image styling */
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+    
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill; /* Changed to fill to match your screenshot */
+            display: block;
+            border-radius: 10px;
+        }
+    
+        .navbar {
+            z-index: 2;
+            background-color: rgba(33, 37, 41, 0.9) !important;
+        }
+    
+        /* Media queries for responsive sizing */
+        @media (max-width: 768px) {
+            .carousel-container {
+                padding-top: 60px;
+            }
+            
+            .carousel {
+                height: calc(100vh - 100px);
+                max-height: 600px;
+            }
+        }
+    
+        /* Optional: Add if you want to ensure text content is visible */
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Blurred background div -->
+    <div class="background-blur"></div>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">UrbanScape</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Carousel -->
+        <div class="carousel-container container">
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Desktop - 2 (2).png" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Desktop - 3.png" d-block w-100" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="urbanscape (1).png" class="d-block w-100" alt="Image 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="page2">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
